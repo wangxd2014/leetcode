@@ -4,18 +4,18 @@
 #include <tr1/unordered_map>
 #include <vector>
 using namespace std;
-using std::tr1::unordered_map;
-vector<int> twoSum(vector<int>& nums,int target){ 
-    unordered_map<int,int> mhash;
+
+vector<int> twoSum(vector<int>& nums,int target) {
+    unordered_map<int,int> hash;
     vector<int> res;
     int number;
     for(unsigned int i=0;i<nums.size();++i){
             number=target-nums[i];
-            if(mhash.find(number)!=mhash.end() ){
-                    res.push_back(mhash[number]);
+            if(hash.find(number)!=hash.end() ){
+                    res.push_back(hash[number]);
                     res.push_back(i);
             }
-            mhash[nums[i]]=i;
+            hash[nums[i]]=i;
     }
      return res;
 }
